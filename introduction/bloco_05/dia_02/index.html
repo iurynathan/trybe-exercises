@@ -123,26 +123,27 @@
 
       addImg();
 
+      let extensiveNumber = [
+        "Um",
+        "Dois",
+        "Três",
+        "Quatro",
+        "Cinco",
+        "Seis",
+        "Sete",
+        "Oito",
+        "Nove",
+        "Dez",
+      ];
+
       function listUl() {
-        let extensiveNumber = [
-          "Um",
-          "Dois",
-          "Três",
-          "Quatro",
-          "Cinco",
-          "Seis",
-          "Sete",
-          "Oito",
-          "Nove",
-          "Dez",
-        ];
         let list = document.createElement("ul");
         document.getElementsByClassName("right-content")[0].appendChild(list);
         for (let i = 0; i < extensiveNumber.length; i += 1) {
-          let text = extensiveNumber[i]
+          let text = extensiveNumber[i];
           let valueList = document.createElement("li");
 
-          valueList.innerText = text
+          valueList.innerText = text;
           document.querySelector("ul").appendChild(valueList);
         }
         return;
@@ -160,6 +161,42 @@
       }
 
       subTitle();
+
+      document.querySelectorAll("h1")[0].classList.add("title");
+
+      function addClassH3() {
+        let number = document.querySelectorAll("h3");
+        for (let i = 0; i < number.length; i += 1) {
+          let classAdd = document.querySelectorAll("h3")[i];
+          classAdd.classList.add("description");
+        }
+        return;
+      }
+
+      addClassH3();
+
+      let removeLeftContent = document.getElementsByClassName(
+        "left-content"
+      )[0];
+      removeLeftContent.parentNode.removeChild(removeLeftContent);
+
+      document
+        .getElementsByClassName("right-content")[0]
+        .setAttribute("style", "margin-right: auto");
+
+      document.querySelectorAll("div")[1].style.background = "green";
+
+      let ListElement = document.querySelectorAll("li");
+      for (let i = 0; i <= ListElement.length; i += 1) {
+        let deleteElement = ListElement[i];
+        console.log(deleteElement)
+        if (
+          deleteElement.innerText.includes("Nove") ||
+          deleteElement.innerText.includes("Dez")
+        ) {
+          deleteElement.parentNode.removeChild(deleteElement);
+        }
+      }
     </script>
   </body>
 </html>
