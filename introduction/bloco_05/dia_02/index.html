@@ -112,6 +112,54 @@
       }
 
       addDivRight();
+
+      function addImg() {
+        let image = document.createElement("img");
+        image.setAttribute("src", "https://picsum.photos/200");
+        image.classList.add("small-image");
+        document.getElementsByClassName("left-content")[0].appendChild(image);
+        return;
+      }
+
+      addImg();
+
+      function listUl() {
+        let extensiveNumber = [
+          "Um",
+          "Dois",
+          "Três",
+          "Quatro",
+          "Cinco",
+          "Seis",
+          "Sete",
+          "Oito",
+          "Nove",
+          "Dez",
+        ];
+        let list = document.createElement("ul");
+        document.getElementsByClassName("right-content")[0].appendChild(list);
+        for (let i = 0; i < extensiveNumber.length; i += 1) {
+          let text = extensiveNumber[i]
+          let valueList = document.createElement("li");
+
+          valueList.innerText = text
+          document.querySelector("ul").appendChild(valueList);
+        }
+        return;
+      }
+
+      listUl();
+
+      function subTitle() {
+        let number = 3;
+        for (let i = 0; i < number; i += 1) {
+          let title = document.createElement("h3");
+          document.getElementsByClassName("main-content")[0].appendChild(title);
+        }
+        return;
+      }
+
+      subTitle();
     </script>
   </body>
 </html>
