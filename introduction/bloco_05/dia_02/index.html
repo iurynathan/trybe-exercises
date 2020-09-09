@@ -69,7 +69,7 @@
 
       function addDivMain() {
         let addDiv = document.createElement("div");
-        addDiv.classList.add("main-content")
+        addDiv.classList.add("main-content");
         document.querySelector("body").appendChild(addDiv);
         return;
       }
@@ -78,14 +78,40 @@
 
       function addDivCenter() {
         let addDiv = document.createElement("div");
-        addDiv.classList.add("center-content")
+        addDiv.classList.add("center-content");
         document.querySelector("div").appendChild(addDiv);
         return;
       }
 
       addDivCenter();
 
-      
+      function addParagraph() {
+        let paragraph = document.createElement("p");
+        document
+          .getElementsByClassName("center-content")[0]
+          .appendChild(paragraph);
+        return;
+      }
+
+      addParagraph();
+
+      function addDivLeft() {
+        let addDiv = document.createElement("div");
+        addDiv.classList.add("left-content");
+        document.getElementsByClassName("main-content")[0].appendChild(addDiv);
+        return;
+      }
+
+      addDivLeft();
+
+      function addDivRight() {
+        let addDiv = document.createElement("div");
+        addDiv.classList.add("right-content");
+        document.getElementsByClassName("main-content")[0].appendChild(addDiv);
+        return;
+      }
+
+      addDivRight();
     </script>
   </body>
 </html>
