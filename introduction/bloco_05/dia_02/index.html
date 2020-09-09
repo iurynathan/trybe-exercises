@@ -69,12 +69,23 @@
 
       function addDivMain() {
         let addDiv = document.createElement("div");
+        addDiv.classList.add("main-content")
         document.querySelector("body").appendChild(addDiv);
-        return
+        return;
       }
 
       addDivMain();
 
+      function addDivCenter() {
+        let addDiv = document.createElement("div");
+        addDiv.classList.add("center-content")
+        document.querySelector("div").appendChild(addDiv);
+        return;
+      }
+
+      addDivCenter();
+
+      
     </script>
   </body>
 </html>
