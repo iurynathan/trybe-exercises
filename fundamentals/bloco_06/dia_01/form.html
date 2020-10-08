@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Currículo</title>
+  </head>
+  <body>
+    <header>
+      <h1>Currículo</h1>
+    </header>
+    <main>
+      <section>
+        <form action="" method="get" name="formulario">
+          <fieldset>
+            <legend>
+              <h2>Formulário</h2>
+            </legend>
+            <label for="">Nome:</label>
+            <input
+              class="formulario"
+              name="nome"
+              type="text"
+              maxlength="40"
+              size="40"
+              required="required"
+            /><br />
+            <label for="">Email:</label>
+            <input
+              class="formulario"
+              name="email"
+              type="email"
+              maxlength="50"
+              size="50"
+              required
+            /><br />
+            <label for="">CPF:</label>
+            <input
+              class="formulario"
+              name="cpf"
+              type="tel"
+              placeholder="01234567890"
+              maxlength="11"
+              pattern="[0-9]{11}"
+              size="11"
+              required
+            /><br />
+            <label for="">Endereço:</label>
+            <input
+              class="formulario"
+              name="endereco"
+              type="text"
+              maxlength="200"
+              size="80"
+              required
+            />
+            <label for="estado">Estado:</label>
+            <select name="estados" required></select
+            ><br />
+            <label for="tipo1"
+              ><input
+                class="formulario"
+                type="radio"
+                name="tipo"
+                id="tipo1"
+                value="Casa"
+                required
+              />Casa</label
+            >
+            <label for="tipo2"
+              ><input
+                class="formulario"
+                type="radio"
+                name="tipo"
+                id="tipo2"
+                value="Apartamento"
+                required
+              />Apartamento</label
+            >
+          </fieldset>
+          <fieldset>
+            <label for="">Resumo do Currículo:</label><br />
+            <textarea
+              class="formulario"
+              name="resumo"
+              cols="50"
+              rows="15"
+              maxlength="1000"
+              required
+            ></textarea
+            ><br />
+            <em>Limite de 1000 caracteres.</em><br />
+            <label for="">Cargo:</label>
+            <input
+              class="formulario"
+              name="cargo"
+              type="text"
+              name=""
+              id=""
+              maxlength="40"
+              required
+            />
+            <label for="">Data de início:</label>
+            <input
+              class="formulario"
+              name="data-inicio"
+              type="date"
+              name=""
+              id=""
+              required
+            /><br />
+            <label for="">Descrição do cargo:</label><br />
+            <textarea
+              class="formulario"
+              name="descricao-cargo"
+              cols="30"
+              rows="10"
+              maxlength="500"
+              required
+            ></textarea>
+          </fieldset>
+          <input class="formulario" type="submit" value="Enviar" id="enviar1" />
+        </form>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
