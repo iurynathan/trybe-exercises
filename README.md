@@ -1,4 +1,4 @@
-# Repositorio de aulas ao vivo para estudante da Turma 8
+# Repositório de aulas ao vivo para estudantes da Turma 8
 
 Este repositório armazena os códigos e scripts fornecidos durante as aulas ao vivo pelos especialistas da Trybe.
 
