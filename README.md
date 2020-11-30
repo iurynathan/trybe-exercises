@@ -1,4 +1,4 @@
-# Repositório de Aulas ao Vivo para estudantes da Turma 8
+# Repositório de Aulas ao Vivo para estudantes da Turma 8 (Infinito <3)
 
 Este repositório armazena os códigos e scripts fornecidos durante as aulas ao vivo pelos especialistas da Trybe.
 
