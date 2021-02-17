@@ -11,6 +11,12 @@
         <button id="decrement">-</button>
         <button id="increment-10">Adiciona 10</button>
       </div>
+      <div>
+        Increment: <span id="increment-value">0</span><br>
+        Decrement: <span id="decrement-value">0</span><br>
+        Increment 10: <span id="increment-value-10">0</span><br>
+        Quantidades de Clicks: <span id="click-count">0</span>
+      </div>
       <script>
         // Padrão da action
         // const action = {
@@ -21,20 +27,38 @@
         // }
         const INCREMENT = 'INCREMENT';
         const DECREMENT = 'DECREMENT';
+        const INCREMENT10 = 'INCREMENT10';
 
         // Criação do reducer
-        function counterReducer(state = { clicks: 0, likes: 0 }, action) {
+        function counterReducer(state = {
+          clicks: 0,
+          increment: 0,
+          decrement: 0,
+          increment10: 0,
+          clickCount: 0,
+        }, action) {
           switch (action.type) {
             case INCREMENT:
               return {
                 ...state,
-                clicks: state.clicks + action.payload.amount
+                clicks: state.clicks + action.payload.amount,
+                increment: state.increment + action.payload.amount,
+                clickCount: state.clickCount + action.payload.amount,
               };
             case DECREMENT:
               return {
                 ...state,
-                clicks: state.clicks - action.payload.amount
+                clicks: state.clicks - action.payload.amount,
+                decrement: state.decrement + action.payload.amount,
+                clickCount: state.clickCount + action.payload.amount,
               };
+            case INCREMENT10:
+              return {
+                ...state,
+                clicks: state.clicks + action.payload.amount,
+                increment10: state.increment10 + action.payload.amount,
+                clickCount: state.clickCount + action.payload.clickCount,
+              }
             default:
               return state;
           }
@@ -70,17 +94,27 @@
         const buttonIncrement10 = document.getElementById('increment-10');
         buttonIncrement10.addEventListener('click', () => {
           store.dispatch({
-            type: INCREMENT,
+            type: INCREMENT10,
             payload: {
               amount: 10,
+              clickCount: 1
             }
           });
         });
 
         // Ler o dado do store global
         store.subscribe(() => {
+          const incrementValue = document.getElementById('increment-value');
+          const decrementValue = document.getElementById('decrement-value');
+          const incrementValue10 = document.getElementById('increment-value-10');
+          const clickCount = document.getElementById('click-count');
           const valueSpan = document.getElementById('value');
+
           valueSpan.innerHTML = store.getState().clicks;
+          incrementValue.innerHTML = store.getState().increment;
+          decrementValue.innerHTML = store.getState().decrement;
+          incrementValue10.innerHTML = store.getState().increment10;
+          clickCount.innerHTML = store.getState().clickCount;
         });
 
       </script>
